@@ -1,0 +1,19 @@
+<header>
+    <div *ngIf="loaderService.isLoading | async">
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </div>
+    <div class="navbar shadow-sm ">
+        <div class="navbar-brand align-item-center d-flex">
+        <img src="assets/images/iconssss.png" alt="" id="icons">&nbsp;
+        <strong style="font-size: 30px;">KororroShopee</strong>
+        <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="search products">
+        </div>
+
+        </div>
+        <button routerLink="cart" class="btn" style="color:#fff;">
+            <i style="font-size: 30px" class="fas fa-cart-plus"></i>
+            <div style="font: size 10px;" class="badge bg-danger">{{totalItem}}</div>
+        </button>
+    </div>
+</header>
